@@ -12,12 +12,14 @@ Dove sono...?
 Io... chi sono...?
 
 *   Io sono... <>
-    - Fio "Io sono Fio.
+    - Fio "Io sono Fio. # fade_out
     Fio?pensieroso "Mi gira la testa...
-    # Prima_immagine
+
     Fio?pensieroso "Dove mi trovo?! Dov'è Matt?!
-    # Seconda_immagine
-    Fio?pensieroso "No...NO! MATT! # Fade_out
+    ->Rapimento
+    
+=== Rapimento ===
+    Fio?scena "No...NO! MATT! 
     ->Storia
 
 
@@ -31,7 +33,7 @@ Fio "Che tipo di capacità?
 Fio "Svariate, non conosciute del tutto.
 Fio "Dal parlare con i morti, ad interagire con essi, le possibilità sono infinite.
 Fio "Ma la vita non è facile per chi possiede quei poteri....
-Fio?dubbioso "...vero Matt? # Fade_out
+Fio?dubbioso "...vero Matt? # fade_out
 ->Ospedale
 
 === Ospedale ===
@@ -218,7 +220,8 @@ Non c'è nessuno... ma...
     -> Strada_enigma
     
 === Strada_enigma ===
-
+Fio?pensieroso "Quindi dove andiamo..?
+Matt "Io sono qui per supportarti. Fai strada! # MattS
 
     
 -> END
