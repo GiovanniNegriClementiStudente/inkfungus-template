@@ -58,7 +58,7 @@ Fio?pensieroso "Perchè sono disteso su un lettino, sto bene?
         Fio?pensieroso "Forse sono stato male? Cosa stavo facendo?
         Fio?pensieroso "Mi pulsa la testa... 
         
-        # Seconda_immagine
+      
         -- Fio?dubbioso "Matt... è un'incubo? Sto sognando?
         Fio?dubbioso "Sono preoccupato... dovrei cercarlo?
         
@@ -104,7 +104,7 @@ Fio?pensieroso "Perchè sono disteso su un lettino, sto bene?
                         Uomo "Buona fortuna ragazzo...
                         Mi misi a correre evitando di sbattere contro il resto delle persone o con il personale dell'ospedale.
                         Nessuno mi ferma, meglio per me. 
-                        Sono all'ingresso dell'ospedale ancora qualche passo e potrò correre a casa di Matt. # Fade_out
+                        Sono all'ingresso dell'ospedale ancora qualche passo e potrò correre a casa di Matt. 
                         -> Ingresso_ospedale
         
         *** Cerca in giro per la stanza
@@ -119,7 +119,7 @@ Fio?pensieroso "Perchè sono disteso su un lettino, sto bene?
             La mappa appesa alla parete principale del reparto in cui mi trovavo mi fa chiarezzaa sulla struttura dell'edificio.
             Fio?pensieroso "Da questa perte dovrebbe esserci l'entrata e la reception. Sapranno sicuramente qualcosa.
             Seguo il corridoio principale che porta alla reception.
-            Sono all'ingresso dell'ospedale ancora qualche passo e avrò delle risposte. # Fade_out
+            Sono all'ingresso dell'ospedale ancora qualche passo e avrò delle risposte. 
                 -> Ingresso_ospedale
                 
 
@@ -162,7 +162,7 @@ Non è possibile. No no no.
         -> Strada
         
     *Esci dall'ospedale e corri a casa di Matt
-    Fio?dubbioso Matt non è stato rapito. No. Matt è a casa.
+    Fio?dubbioso "Matt non è stato rapito. No. Matt è a casa.
     Accellero il passo verso la porta d'uscita.
     Fio "Ora vado a casa sua. E lui sarà li ad aspettarmi davanti alla GameZone4 come tutti i giorni...
     Comincio a correre lasciandomi alle spalle l'ospedale da cui mi ero svegliato.
@@ -189,7 +189,7 @@ Non c'è nessuno... ma...
     - Matt "Ciao Fio. # MattS_triste
     Eh? Cos'è uno scherzo?
     Fio?dubbioso "Matt perchè sei trasparente? Che hai?
-    Mattdubbioso "Calmati. Va tutto bene ok?
+    Matt?dubbioso "Calmati. Va tutto bene ok?
     Fio?arrabbiato "Va tutto bene..?!
     Lo picchio. Giuro che lo picchio.
     Fio?arrabbiato "Come credi che vada tutto bene? Ho appena scoperto che eri stato rapito e ora ti trovo qui? E smettila con questo scherzo, esci fuori. #MattS_sparisce # MattS
@@ -567,11 +567,11 @@ Sconosciuta "Il Medium sta scappando! #Matt_sparisce #Kia_arrabbiata
 Fio "Cazzo.
 Matt "L'uscita è di la! #Kia_sparisce #Matt
 Corro verso l'uscita.
-Sconosciuta "Fermi o sparo! #Matt_sparisce #Kia_arrabbiata
+Sconosciuta "Fermi o sparo! #Matt_sparisce #shot_fio
 Non ho fatto tutta sta strada per nulla.
 Non te lo permetterò.
-Matt "Fio cosa stai facendo!? #Kia_sparisce #Matt_preoccupato
-Sconosciuta "Ma tu sei il ragazzo di tre giorni fa?! #Matt_sparisce #Kia_pesnierosa
+Matt "Fio cosa stai facendo!? #immagine_sparisce #Matt_preoccupato
+Sconosciuta "Ma tu sei il ragazzo di tre giorni fa?! #Matt_sparisce #Kia_pensierosa
 Sconosciuta "Non so come tu sia arrivato fin qui intero.
 Sconosciuto "Ma non ci porterai via il Medium! #Kia_sparisce #Kia_arrabbiata 
 Matt "Scappa Fio! #Kia_sparisce #Matt_preoccupato
@@ -582,20 +582,20 @@ Matt "Scappa Fio! #Kia_sparisce #Matt_preoccupato
     Sto cazzo che ve lo lascio prendere.
     Fio?arrabbiato "Levati dalle palle Mat-
     
-- Un colpo di pistola interrompe il casino.
+- Un colpo di pistola interrompe il casino. #Matt_sparisce #take_the_shot
 Resto immobile.
-Il proiettile mi ha colpito.
+Il proiettile mi ha colpito. #immagine_sparisce #take_shot
 Mi tocco il petto.
 Niente sangue.
 Cosa vuol dire?
 Mi ha mancato?
-No. Impossibile.
+No. Impossibile.#immagine_sparisce
 Sconosciuta "Il colpo... #Matt_sparisce #Kia
 Sconosciuta "Il colpo ti è passato attraverso...
 Eh?
 Cosa vuol dire?
 Fio?dubbioso "Cosa..?
-Matt?dubbioso "Fio... #Kia_sparisce 
+Matt?dubbioso "Fio... #Kia_sparisce #matt_shot
 Mi giro.
 Matt si regge in piedi a stento. Una mano copre il suo fianco.
 Matt "Fio... scusa...
@@ -603,25 +603,25 @@ Fio "Che cazzo stai dicendo?
 Fio?arrabbiato "Perchè ti scusi?! Come cazzo ti ha colpito quel proiettile...
 Guardo dietro di lui.
 Non c'è nessuno.
-Matt?arrabbiato "Io ti ho mentito...
-Fio "Cosa..?
-Matt "Non sono in grado di parlare con i vivi...
-Matt "Ti ho mentito...
+Matt?scena "Io ti ho mentito... 
+Fio?scena "Cosa..?
+Matt?scena "Non sono in grado di parlare con i vivi...
+Matt?scena "Ti ho mentito...
 Cosa significa?
 Cosa vuol dire?
 In realtà...
 Io sono...
 * Morto 
     Io sono morto..?
-    Matt?pensieroso "Ho usato i miei poteri da Medium per tenere il tuo spirito legato al mondo e non farti sparire...
-    Fio?arrabbiato "Cosa stai dicendo?!
-    Matt?arrabbiato "Tu sei morto quella sera...
-    Matt?arrabbiato "Non ricordi?
+    Matt?scena "Ho usato i miei poteri da Medium per tenere il tuo spirito legato al mondo e non farti sparire...
+    Fio?scena "Cosa stai dicendo?!
+    Matt?scena "Tu sei morto quella sera...
+    Matt?scena "Non ricordi? #immagine_sparisce #coltello 
     /* Flashback */
-    Io... sono sempre stato morto...?
-    Fio?trsite "Perchè lo hai fatto..?
-    Matt si accascia a terra.
-    Mi avvicino a lui.
+    Io... sono sempre stato morto...? 
+    Fio?scena "Perchè lo hai fatto..? #immagine sparisce #morte_fio
+    Matt si accascia a terra. 
+    Mi avvicino a lui. #immagine_sparisce #morte_matt
     Non riescoa  trattenere le lacrime.
     Matt..
     Fio?scena "Perchè lo hai fatto..?
@@ -640,26 +640,26 @@ Io sono...
     Quindi io ero vivo solo perchè Matt mi stava tenendo in via eh...
     Ora Matt è morto...
     E morirò anche io...
-    Una mano mi tocca la spalla.
+    Una mano mi tocca la spalla. #immagine_sparisce #rinascita
     Matt?scena "Chi cazzo è?!
     /*disegni*/
-    Fio?scena "Matt...
+    Fio?scena "Matt... #immagine_sparisce #incontro
     Matt?scena "Ciao scemo.
-    Fio?scena "E scemo sarei io eh..?
+    Fio?scena "E scemo sarei io eh..? #immagine_sparisce #abbraccio 
     Matt?scena "In real-
     Fio?scena "Stai zitto.
     Abbraccio Matt.
     Sono troppo felice.
-    Almeno posso dirglielo anceh io.
+    Almeno posso dirglielo anche io.
     Fio?scena "Matt..
     Matt?scena "Lo so... non dirlo...
     Fio?scena "No. Ora subisci.
     Matt mi guarda fisso negli occhi.
     Fio?scena "Matt ti am-
-    Non mi fai finire di parlare.
+    Non mi fai finire di parlare. #immagine_sparisce #bacio
     Scemo.
     Ti amo.
-    Fio?scena "E adesso..?
+    Fio?scena "E adesso..? #immagine_sparisce #abbraccio
     Matt?scena "Adesso ce ne andiamo...
     Fio?scena "insieme...
     -> END
