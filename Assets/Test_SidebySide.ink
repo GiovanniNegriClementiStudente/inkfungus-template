@@ -1,18 +1,18 @@
 /* 
     Side by side
     Giovanni Negri Clementi
-    Versione 0.1
+    Versione 3.1
 */
 
 -> Flashback
 
 === Flashback ===
 
-Dove sono...?
+Dove sono...? 
 Io... chi sono...?
 
 *   Io sono... <>
-    - Fio "Io sono Fio. # fade_out
+    - Fio "Io sono Fio. fadeout
     Fio?pensieroso "Mi gira la testa...
 
     Fio?pensieroso "Dove mi trovo?! Dov'è Matt?!
@@ -40,15 +40,15 @@ Fio?dubbioso "...vero Matt? # fade_out
 
 Fio?normale "Che stanchezza... dove mi trovo..?
 
-+   Alzati
+*   Alzati
     Fio?pensieroso "Mi alzo di scatto sono <>
 
-+   Guardati attorno
+*   Guardati attorno
     Fio?pensieroso "Apro lentamente gli occhi. Pareti bianche, un lavandino, un carrello con parecchi attrezzi...
     Fio?pensieroso "Sono <>
     
-    - in un'ospedale. Ma cosa ci faccio qui?
-    Fio?pensieroso "Perchè sono disteso su un lettino, sto bene?
+- in un'ospedale. Ma cosa ci faccio qui?
+Fio?pensieroso "Perchè sono disteso su un lettino, sto bene?
     
     **  Sono ferito?
         Fio?pensieroso "Mi tasto il corpo per controllare, ma sto bene.
@@ -59,7 +59,7 @@ Fio?normale "Che stanchezza... dove mi trovo..?
         Fio?pensieroso "Mi pulsa la testa... 
         
         # Seconda_immagine
-        - Fio?dubbioso "Matt... è un'incubo? Sto sognando?
+        -- Fio?dubbioso "Matt... è un'incubo? Sto sognando?
         Fio?dubbioso "Sono preoccupato... dovrei cercarlo?
         
         *** Esci dalla stanza
@@ -222,9 +222,388 @@ Non c'è nessuno... ma...
 === Strada_enigma ===
 Fio?pensieroso "Quindi dove andiamo..?
 Matt "Io sono qui per supportarti. Fai strada! # MattS
+Ok.. dove devo andare?
+    ->Scelta_strada
+    
+=== Scelta_strada ===
+{ Via_principale: Matt "Siamo già stati nella via principale, forse dovremmo cercare altrove?}
+{ Via_principale > 2 : Matt "Forse ci siamo persi qualche informazione chiave...}
+{ Strada_secondaria: Matt "Siamo già passati per la strada secondaria no?}{ Strada_secondaria > 2 : Matt "Forse abbiamo dimenticato qualcosa...}
+{ Via_principale and Strada_secondaria: Matt "Abbiamo veramente cercato ovunque..? Eppure non posso essere lontano.}
+{ not Via_principale: Matt "Forse dovremmo controllare nella via principale? }
+{ not Strada_secondaria: Matt "Forse dovremmo controllare nella strada secondaria? }
+{ info } Matt "Ci siamo! Sicuramente in quel vicolo troveremo quello che ci serve! 
+
+    *   (strada1) Via principale
+    Fio "Andiamo per di qua.
+    Matt "Ti seguo. Ah, se non mi vedi è perchè devo tornare nel mio corpo di tanto in tanto, ok?
+    Fio?dubbioso "Ok, basta che no sparisci del tutto.
+    Matt "Non ti preoccupare!
+    Matt si dissolve nel posto lasciando spazio al nulla.
+    Devo fare di tutto per trovarlo.
+    Decido di dirigermi per la strada principale. Sicuramente troverò qualcosa.
+    -> Via_principale
+    
+    + { strada1 } Via principale
+    -> Via_principale
+        
+        
+    *   (strada2) Strada secondaria
+    Fio "Andiamo per di qua.
+    Matt "Ti seguo. Ah, se non mi vedi è perchè devo tornare nel mio corpo di tanto in tanto, ok?
+    Fio?dubbioso "Ok, basta che no sparisci del tutto.
+    Matt "Non ti preoccupare!
+    Matt si dissolve nel posto lasciando spazio al nulla.
+    Devo fare di tutto per trovarlo.
+    Decido di dirigermi per una stradina secondaria. Le notizie non si trovano in centro alle città, no?
+    -> Strada_secondaria
+    
+    + { strada2 } Strada secondaria
+    -> Strada_secondaria
+        
+    +   { info } Vicolo.
+    ->Vicolo
+
+=== Via_principale ===
+Mi incammino nella via principale, devo trovare delle informazioni.
+{ Via_principale > 0 : Fio?pensieroso "Non c'è molta gente qui...}
+{ Via_principale > 1 : Fio?pensieroso "Cosa non ho controllato prima..?}
+
+    * (rosso) Ragazzo
+    Fio "Mi scusi, mi sa dire se nei dintorni si trova qualche magazzino?
+    Ragazzo "Magazzino dici..? 
+    Fio "Si esatto.
+    Ragazzo "Con i miei amici solitamente andavamo in un magazzino a giocare...
+    Fio?pensieroso "Potrebbe essere quello che cerco! Mi sai dire dove posso trovarlo?
+    Ragazzo "Non ricordo... ma se chiedi al mio amico forse può aiutarti!
+    Fio?dubbioso "Dove posso trovarlo?
+    Ragazzo "Da quella parte!
+    Il ragazzo ha indicato una una persona con la maglia rossa su una strada secondaria, forse dovrei andare da lui.
+    ->Scelta_strada
+        
+        
+    * Uomo
+    Fio "Mi scusi, mi sa dire se nei dintorni si trova qualche magazzino?
+    Uomo "Che ti serve un magazzino scusa?
+    Fio?pensieroso "Questa persona non si fa i cazzi suoi eh...
+    Fio "E' importante perfavore.
+    Uomo "Mi preoccupi, non parlarmi.
+    L'uomo se ne è andata. E' stato tutto inutile eh.
+    ->Scelta_strada
+        
+    * Gruppo di persone 
+    Ci sono delle persone che stanno parlando in modo sospetto.
+    Fio?pensieroso "Se mi avvicino di soppiatto forse riesco ad origliare...
+    Matt "Ti aiuto io!
+    Ma quando è comparso? 
+    Fio?dubbioso "Come vorresti aiutarmi?
+    Matt "Con i miei poteri da medium! Dammi una mano.
+    Cosa intende fare?
+    Fio "Cosa devo fare?
+    Matt "Modifichiamo i loro pensieri.
+    Fio "Puoi fare una cosa del genere?!
+    Matt "Solo su alcune persone. Quelle con lo spirito insatabile.
+    Fio "Mh.. ok...
+    Spero non l'abbia mai fatto con me.
+    ->Enigma
+
+=== Enigma ===
+
+Matt "Concetrati e scegliamo attentamente le parole chiave.
+Matt "Dobbiamo essere rapidi altrimenti si sconcetreranno!
+Fio "Ok. Proviamo!
+-> END
+
+=== Strada_secondaria ===
+Mi incammino nella per la stradina principale. Devo trovare delle informazioni.
+{ Strada_secondaria > 0 : Fio?pensieroso "Quelli sono dei ragazzi? Che ci fanno qui?}
+{ Strada_secondaria > 1 : Fio?pensieroso "Cosa non ho controllato prima..?}
+
++ Gruppo di ragazzi
+Fio "Scusatemi sapete dirmi...
+Ragazzo "Sparisci.
+Fio "Volevo solo chiedere...
+Ragazzo "Sparisci.
+Tutti i ragazzi mi guardano male. Non ne otterò niente.
+->Scelta_strada
+
+* Tipo sospetto
+Fio?pensieroso "Quel tipo sembra sospetto...
+Matt "Non lo conosco. Mai visto.
+Fio?arrabbiato "Matt mi fai prendere un'infarto!
+Matt "Shhh!
+Fio "Cosa pensi debba fare? Gli vado a parlare?
+Matt "Meglio di no...
+Fio "Capito. Continuiamo a cercare.
+->Scelta_strada
+     
+* { rosso }  Ragazzo con la maglia rossa 
+Dev'essere lui. Lui mi aiuterà.
+Fio "Ehi tu ragazzino con la maglia rossa
+Ragazzo "Cosa? Chi sei?
+Fio "Mi manda il tuo amico, dice che puoi aiutarmi. Sto cercando un magazzino poco distante da qui.
+Ragazzo "Mhh... c'è un magazzino nel vicolo in fondo a questa strada.
+Ragazzo "Di solito andavamo li a giocare.
+Matt "E quello! Ne sono sicuro!
+    **  (info) Eureka.
+    - Fio?pensieroso "E' sicuramente quello...
+    Fio?arrabbiato "La smetti di comparire a caso?!
+    Ragazzo "Cosa?!
+    E' vero che posso vederlo solo io Matt.
+    Matt si mette a ridere. Idiota.
+    Fio "Nulla nulla . Scusa il disturbo
+    Meglio levarci dai piedi.
+    Fio "Grazie ancora
+    Ragazzo "Che tipo strano...
+    Matt "Sei buffo.
+    Fio?arrabbiato "Stai zitto tu. Andiamo al magazzino che ti riporto a casa.
+    ->Scelta_strada
+
+
+=== Vicolo ===
+
+Fio "Questa dovrebbe essere la strada del magazzino.
+Matt "Fio... so che siamo vicini, ma ora devo lasciarti.
+Fio?dubbioso "Ma...
+Matt "Tranquillo ci rivediamo presto. Tu trova il modo di entrare nel magazzino ok?
+Fio?dubbioso "Va bene... a tra poco...
+E per l'ennesima volta Matt scomparve davanti ai miei occhi.
+Ormai sono vicino, devo trovare il modo di entrare nel magazzino.
+->Scelta_vicolo
+
+=== Scelta_vicolo ===
+
++   { entrata_sul_retro } Entrata sul retro
+Fio?pensieroso "Le persone sospette avevano detto che c'èra un'entrata sul retro...
+Faccio il giro dell'edificio. C'è una porta chiusa.
+Nessuna guardia.
+Ma sono scemi?
+Non è importante. Ora sono dentro!
+Fio "Sto arrivando Matt.
+->Magazzino_retro
+
++   Distraggo le guardie
+    ->Distrai_guardie
+    
+
++   Mi avvicino di soppiatto
+Senza farmi notare sorpasso le guardie.
+Sono sceme?
+Non lo so. Ma ora sono dentro.
+->Magazzino
+
+*   Chiedo aiuto a Matt
+    Fio?pensieroso "Potrei chiedere a Matt...
+    No. E' un'idea stupida, ha detto che doveva andare...
+    Devo farcela da solo.
+    ->Scelta_vicolo
+
+=== Distrai_guardie ===
+Come distraggo le guardie?
+*Palloncino
+    Tiro fuori un palloncino dalla tasca.
+    Fio?pensieroso "Perchè avevo un palloncino?
+    Non è il momento di farsi delle domande.
+    Gonfio il palloncino e... 
+    ** ...lo lancio
+    Le guarie sono distratte.
+    Sono sceme?
+    Ok. E' il momento.
+    Sgattaiolo dentro.
+    Ok. Sono dentro il magazzino.
+    ->Magazzino
+    ** ...lo scoppio
+    Le guardie si spaventano.
+    Ok. E' il momento.
+    Corro sorpassando le due guardie.
+    Sono dentro il magazzino.
+    ->Magazzino
+    
+*Monetina
+Le guarie sono distratte.
+Sono sceme?
+Ok. E' il momento.
+Sgattaiolo dentro.
+Ok. Sono dentro il magazzino.
+->Magazzino
+
+*Urlo
+Fio?arrabbiato "POLIZIA! Ci sono due tizi sospetti!
+Le guardie si spaventano.
+Ok. E' il momento.
+Corro sorpassando le due guardie.
+Sono dentro il magazzino.
+->Magazzino
 
     
--> END
+=== Magazzino ===
+Sono dentro. Ora devo solo fare piano.
+Guardia "Ehi tu non dovresti essere qui.
+Cazzo ci sono delle guardie anche dentro.
+La guardia mi afferra per la felpa e mi trascina fuori dal magazzino.
+Fio?pensieroso "Devo trovare un'altro modo per entrare.
+Che abbia perso qualcosa?
+Forse c'è un'entrata sul restro? 
+Non lo so. Troniamo sulla via principale, magari trovo un'indizio.
+    -> Via_principale
+ 
+
+-> Libera_Matt
+
+=== Magazzino_retro ===
+Sono dentro. Ora devo solo fare piano.
+Sconosciuto "Ehi. Chi abbiamo qui. 
+Una lama mi sfiora il volto.
+Fio "Chi sei?
+Sconosciuto "Quanto coraggio per qualcuno che stava per perdere la vista eh?
+Sconosciuto "Voltati.
+Mi giro lentamente guardando il signore di fronte a me.
+Lui mi fissa. Mi squadra da cima a fondo.
+Sconosciuto "Sei il ragazzo...sei venuto qui a riprendere il tuo amico immagino.
+Fio "Esattamente.
+Jeff "Sono Jeff. Non so come tu faccia a essere qui, ma mi torni utile.
+Jeff "Il tuo amico non mi interessa, ma a quanto pare a mia sorella si.
+Cosa avrà in mente..?
+Jeff "Senti, effettivamente preferirei levarmi di torno quel Medium.
+Jeff "Facciamo così. Io ti do una mano a portarlo via e tu non ti fai più vedere. Ok?
+Fio?pensieroso "Non ho altra scelta eh...
+* Accetta
+* Accetta
+- Jeff "Vedo che ci siamo capiti.
+-> Libera_Matt
+
+
+=== Libera_Matt ===
+Fio "Va bene. Non ho nulla da perdere.
+Jeff "Non sei stupido allora eh...
+Non so che intenzioni abbia ma mi conviene aiutarlo.
+Jeff "Passa da dietro quei banconi io distraggo le guardie.
+Fio "Ok. Grazie Jeff.
+Jeff "Non ringraziarmi. Mi stai facendo un favore.
+Non so cosa significhi. Ma meglio stare al suo gioco.
+Aggiro le guardie seguendo la strada consigliata da Jeff.
+Non c'è nessuno.
+Mi accosto vicino ad un bancale. In centro alla stanza c'è Matt legato.
+Delle guardie sono attorno a lui.
+Ora aspetto.
+Jeff?distrazione "Ragazzi seguitemi. Ho sentito un rumore provenire dall'ingresso.
+Jeff ha distratto le guardie come promesso. E' il momento.
+Corro da Matt.
+Fio "Sono qui. Ora sta zitto che ti porto via.
+Matt sorride. Non dice nulla, mi guarda e basta. 
+Tra poco saremo fuori.
+Fio "Ok ho fatto. Ora andiamocene. 
+Matt mi salta addosso abbracciandomi.
+Matt "Grazio Fio.
+Fio "Ok ok ma ora andiamo.
+Matt comincia a piangere guardandomi.
+Matt "Non so cosa avrei fatto senza di te...
+Che idiota.
+Fio "Mi ringrazi dopo.
+Lo prendo per un braccio e comincioa  correre.
+Sconosciuta "Il Medium sta scappando!
+Fio "Cazzo.
+Matt "L'uscita è di la!
+Corro verso l'uscita.
+Sconosciuta "Fermi o sparo!
+Non ho fatto tutta sta strada per nulla.
+Non te lo permetterò.
+Matt "Fio cosa stai facendo!?
+Sconosciuta "Ma tu sei il ragazzo di tre giorni fa?!
+Sconosciuta "Non so come tu sia arrivato fin qui intero.
+Sconosciuto "Ma non ci porterai via il Medium!
+Matt "Scappa Fio!
+* Resta immobile
+    Resto immobile.
+* Proteggi Matt
+    Mi piazzo davanti a Matt. Sono venuto fin qui per lui. 
+    Sto cazzo che ve lo lascio prendere.
+    Fio "Levati dalle palle Mat-
+    
+- Un colpo di pistola interrompe il casino.
+Resto immobile.
+Il proiettile mi ha colpito.
+Mi tocco il petto.
+Niente sangue.
+Cosa vuol dire?
+Mi ha mancato?
+No. Impossibile.
+Sconosciuta "Il colpo...
+Sconosciuta "Il colpo ti è passato attraverso...
+Eh?
+Cosa vuol dire?
+Fio?dubbioso "Cosa..?
+Matt?dubbioso "Fio...
+Mi giro.
+Matt si regge in piedi a stento. Una mano copre il suo fianco.
+Matt "Fio... scusa...
+Fio "Che cazzo stai dicendo?
+Fio?arrabbiato "Perchè ti scusi?! Come cazzo ti ha colpito quel proiettile...
+Guardo dietro di lui.
+Non c'è nessuno.
+Matt?arrabbiato "Io ti ho mentito...
+Fio "Cosa..?
+Matt "Non sono in grado di parlare con i vivi...
+Matt "Ti ho mentito...
+Cosa significa?
+Cosa vuol dire?
+In realtà...
+Io sono...
+* Morto 
+    Io sono morto..?
+    Matt?pensieroso "Ho usato i miei poteri da Medium per tenere il tuo spirito legato al mondo e non farti sparire...
+    Fio?arrabbiato "Cosa stai dicendo?!
+    Matt?arrabbiato "Tu sei morto quella sera...
+    Matt?arrabbiato "Non ricordi?
+    /* Flashback */
+    Io... sono sempre stato morto...?
+    Fio?trsite "Perchè lo hai fatto..?
+    Matt si accascia a terra.
+    Mi avvicino a lui.
+    Non riescoa  trattenere le lacrime.
+    Matt..
+    Fio?scena "Perchè lo hai fatto..?
+    Matt?scena "Volevo rivederti un'ultima volta...
+    Fio?scena "Ma...
+    Cosa...? Cosa vuol dire..?
+    Matt?scena "Fio...
+    Fio?scena "Cosa..?
+    Matt?scena "Io ti amo...
+    Sei un'idiota.
+    Potevi dirmelo prima no?
+    Adesso me lo devi dire?
+    Fio?scena "Che cazzo Matt... potevi dirmelo prima no...
+    Matt sorride per poi cadere a terra.
+    Il mio corpo si fa freddo in fretta.
+    Quindi io ero vivo solo perchè Matt mi stava tenendo in via eh...
+    Ora Matt è morto...
+    E morirò anche io...
+    Una mano mi tocca la spalla.
+    Matt?scena "Chi cazzo è?!
+    /*disegni*/
+    Fio?scena "Matt...
+    Matt?scena "Ciao scemo.
+    Fio?scena "E scemo sarei io eh..?
+    Matt?scena "In real-
+    Fio?scena "Stai zitto.
+    Abbraccio Matt.
+    Sono troppo felice.
+    Almeno posso dirglielo anceh io.
+    Fio?scena "Matt..
+    Matt?scena "Lo so... non dirlo...
+    Fio?scena "No. Ora subisci.
+    Matt mi guarda fisso negli occhi.
+    Fio?scena "Matt ti am-
+    Non mi fai finire di parlare.
+    Scemo.
+    Ti amo.
+    Fio?scena "E adesso..?
+    Matt?scena "Adesso ce ne andiamo...
+    Fio?scena "insieme...
+    -> END
+    
+
+
     
 
     
